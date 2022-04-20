@@ -17,7 +17,7 @@ import (
 )
 
 func NewNft(feePayer types.Account) (string, error) {
-	c := client.NewClient(rpc.DevnetRPCEndpoint)
+	c := client.NewClient(rpc.TestnetRPCEndpoint)
 
 	mint := types.NewAccount()
 	fmt.Printf("NFT: %v\n", mint.PublicKey.ToBase58())
@@ -74,9 +74,9 @@ func NewNft(feePayer types.Account) (string, error) {
 					UpdateAuthorityIsSigner: true,
 					IsMutable:               true,
 					Data: tokenmeta.DataV2{
-						Name:                 "Messi #0001",
+						Name:                 "Messi #0002",
 						Symbol:               "BITNFT",
-						Uri:                  "https://www.criptonoticias.com/wp-content/uploads/2021/08/messi-nft.jpg.webp",
+						Uri:                  "https://upload.wikimedia.org/wikipedia/commons/b/b8/Messi_vs_Nigeria_2018.jpg",
 						SellerFeeBasisPoints: 100,
 						Creators: &[]tokenmeta.Creator{
 							{
